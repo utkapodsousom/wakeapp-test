@@ -2,16 +2,42 @@ import $ from 'jquery';
 
 import './styles/main.scss';
 
-const modalSignup = $('#modal-signup');
-const openModalSignup = $('.openSignup');
-const closeModal = $('.modal__close');
+const modalEl = $('#modal');
 const preloader = $('.preloader');
 const menuBtn = $('#menuBtn');
-const menuMob = $('.header__resp');
-const menuMobClose = $('.header__resp .close');
+const tabBtn = $('.tabsBtn');
+const tabContentEls = $('.tabContent');
+const modalBtnEls = $('[data-modal]');
+
+modalBtnEls.on('click', (e) => {
+  e.preventDefault();
+  const modalType = e.target.dataset.modal;
+  makeVisible(modalType);
+  modalEl.css('display', 'block');
+  $(`[data-tab=${modalType}]`).addClass('active');
+});
+
+const makeVisible = (type) => {
+  const tabContent = $(`#${type}`);
+  tabContent.css('display', 'block');
+};
+
+tabBtn.on('click', (e) => {
+  const tabTarget = e.target.dataset.tab;
+  tabContentEls.css('display', 'none');
+  makeVisible(tabTarget);
+  tabBtn.removeClass('active');
+  e.target.classList.add('active');
+});
+
+modalEl.on('click', (e) => {
+  if (e.target == modalEl[0]) {
+    modalEl.css('display', 'none');
+  }
+})
 
 const openNav = () => {
-  menuMob.css({ width: '300px', opacity: '1' });
+  menuMob.css({ width: '100%', opacity: '1' });
 };
 
 const closeNav = () => {
@@ -22,19 +48,7 @@ $(window).on('load', () => {
   preloader.fadeOut();
 });
 
-openModalSignup.on('click', () => {
-  modalSignup.slideDown();
-  closeNav();
-});
-
-closeModal.on('click', () => {
-  modalSignup.slideUp();
-});
-
 menuBtn.on('click', () => {
   openNav();
 });
 
-menuMobClose.on('click', () => {
-  closeNav();
-});

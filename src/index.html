@@ -11,13 +11,26 @@
   <div class="preloader">
     <div class="preloader__ring"></div>
   </div>
-  <div class="overlay"></div>
   <div class="wrapper">
+    <div class="menu-mobile">
+      <span class="close">&times;</span>
+      <nav class="nav-mobile">
+        <menu class="nav-mobie__list">
+          <li class="nav-mobie__item"><a href="#games" class="nav__link">Games</a></li>
+          <li class="nav-mobie__item"><a href="#games" class="nav__link">Contact Us</a></li>
+          <li class="nav-mobie__item"><a href="#games" class="nav__link">Terms of Use</a></li>
+          <li class="nav-mobie__item"><a href="#games" class="nav__link">About</a></li>
+        </menu>
+      </nav>
+      <div class="menu-mobile__actions">
+        <a href="#" data-modal="signup" class="menu-mobile__link openSignup">Sign up</a>
+        <a href="#" data-modal="login" class="button button--grad">Log in</a>
+      </div>
+    </div>
     <header class="header">
       <div class="header__inner">
         <a href="/" class="header__logo"><img src="images/logo.svg" alt="logo" class="header__logo-image"></a>
         <div class="header__resp">
-          <span class="close">&times;</span>
           <nav class="nav header__nav">
             <menu class="nav__list">
               <li class="nav__item"><a href="#games" class="nav__link">Games</a></li>
@@ -27,8 +40,8 @@
             </menu>
           </nav>
           <div class="header__actions">
-            <a href="#signup" class="header__link openSignup">Sign up</a>
-            <a href="#login" class="button button--grad">Log in</a>
+            <a href="#" data-modal="signup" class="header__link openSignup">Sign up</a>
+            <a href="#" data-modal="login" class="button button--grad">Log in</a>
           </div>
         </div>
         <button type="button" class="header__mobile-btn" id="menuBtn"><span></span><span></span><span></span></button>
@@ -40,7 +53,7 @@
           <h1 class="hero__title">Awesome html5 games - no money!</h1>
           <p class="hero__subtitle">Your perfect place to get some fun and excitement</p>
           <div class="hero__buttons">
-            <a href="#login" class="button button--tp hero__button">Log in</a>
+            <a href="#" data-modal="login" class="button button--tp hero__button">Log in</a>
             <a href="#play" class="button button--grad hero__button">Play</a>
           </div>
           <div class="signup-form hero__signup-form">
@@ -255,34 +268,36 @@
         </div>
       </div>
     </footer>
-    <div class="modal" id="modal-signup">
-      <span class="modal__close">&times;</span>
-      <div class="modal__inner">
-        <div class="signup-form hero__signup-form">
-          <div class="signup-form__top">
-            <h2 class="signup-form__title">create a free account now</h2>
-            <ul class="signup-form__features features">
-              <li class="features__item"><img src="images/AboutUs_Dice_75x75__1_ 3.png" alt="icon 1" class="features__icon"><p class="features__text">1000+ Games Available</p></li>
-              <li class="features__item"><img src="images/AboutUs_Dice_75x75__1_ 1.png" alt="icon 2" class="features__icon"><p class="features__text">New Game Every Week</p></li>
-              <li class="features__item"><img src="images/AboutUs_Dice_75x75__1_ 2.png" alt="icon 3" class="features__icon"><p class="features__text">Support Our Users 24/7</p></li>
-            </ul>
-          </div>
-          <form class="signup-form__inner form">
-            <div class="form__row">
-              <div class="form__fields">
-                <input class="form__input" type="text" name="fname" id="fname" placeholder="Firstname" required>
-                <input class="form__input" type="text" name="lname" id="lname" placeholder="Lastname" required>
-                <input class="form__input" type="email" name="email" id="email" placeholder="Email Address" required>
-                <fieldset class="form__terms">
-                  <label for="terms" class="checkbox">
-                    <input class="checkbox__input" type="checkbox" name="terms" id="terms" required>
-                    <span class="checkbox__check"></span>
-                  </label>
-                  <span class="form__accept">I Accept The <a href="#" class="form__link">Privacy Policy</a></span>
-                </fieldset>
-              </div>
-              <button type="submit" class="button button--grad form__button">Join Now</button>
-            </div>
+    <div class="modal" id="modal">
+      <div class="modal__content tabforms">
+        <div class="tabforms__tabs tabs">
+          <button type="button" class="tabs__button tabsBtn" data-tab="signup">Sign Up</button>
+          <button type="button" class="tabs__button tabsBtn" data-tab="login">Login</button>
+        </div>
+        <div id="signup" class="tabforms__form tabContent">
+          <form method="POST" action="/signup" class="form">
+            <input class="form__input" type="text" name="fname3" id="fname3" placeholder="Firstname" required>
+            <input class="form__input" type="text" name="lname3" id="lname3" placeholder="Lastname" required>
+            <input class="form__input" type="email" name="email3" id="email3" placeholder="Email Address" required>
+            <fieldset class="form__row">
+              <input class="form__input form__input--1-2" type="password" name="password" id="password" placeholder="Password" required>
+              <input class="form__input form__input--1-2" type="password" name="password-confirm" id="password-confirm" placeholder="Confirm Password" required>
+            </fieldset>
+            <fieldset class="form__terms form__terms--center">
+              <label for="terms3" class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="terms3" id="terms3" required>
+                <span class="checkbox__check"></span>
+              </label>
+              <span class="form__accept">I Accept The <a href="#" class="form__link">Privacy Policy</a></span>
+            </fieldset>
+            <button type="submit" class="button button--grad form__button">Join Now</button>
+          </form>
+        </div>
+        <div id="login" class="tabforms__form tabContent">
+          <form method="POST" action="/login" class="form">
+            <input class="form__input" type="email" name="email2" id="email2" placeholder="Email Address" required>
+            <input class="form__input" type="password" name="password" id="password2" placeholder="Password" required>
+            <button type="submit" class="button button--grad form__button">Login</button>
           </form>
         </div>
       </div>
