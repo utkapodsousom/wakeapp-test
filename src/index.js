@@ -18,7 +18,7 @@ modalBtnEls.on('click', (e) => {
   e.preventDefault();
   const modalType = e.target.dataset.modal;
   makeVisible(modalType);
-  modalEl.css('display', 'block');
+  modalEl.css('display', 'flex');
   $(`[data-tab=${modalType}]`).addClass('active');
   body.css('overflow', 'hidden');
   closeNav();
