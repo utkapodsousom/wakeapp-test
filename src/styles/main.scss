@@ -54,6 +54,10 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 fieldset {
   border: none;
   margin: 0;
@@ -90,7 +94,7 @@ fieldset {
 main {
   padding-bottom: 24px;
   background-image: url('../images/bg_hero.jpeg'), url('../images/bg_contact.jpeg');
-  background-position: center top, 37% bottom;
+  background-position: center -9%, 48% bottom;
   background-size: auto, auto;
   background-repeat: no-repeat;
 }
@@ -131,6 +135,8 @@ main {
   }
 
   &__actions {
+    display: flex;
+    align-items: center;
     margin-left: auto;
   }
 
@@ -222,14 +228,13 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 32px 30px 0;
-    border-top: 7px solid #d9d9d9;
   }
 
   &__title {
     font-size: 48px;
     font-weight: 700;
     max-width: 586px;
-    margin: 0 auto 6px;
+    margin: 8px auto 6px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -253,8 +258,8 @@ main {
 
   &__button {
     width: 160px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: 9px;
+    padding-bottom: 9px;
   }
 
   &__signup-form {
@@ -268,7 +273,7 @@ main {
   border: 1px solid #3a4054;
   backdrop-filter: blur(5px);
   border-radius: 16px;
-  padding: 12px 16px 18px;
+  padding: 9px 16px 16px;
 
   &__top {
     display: flex;
@@ -287,6 +292,7 @@ main {
 
   &__features {
     flex: 1;
+    max-width: 377px;
   }
 }
 
@@ -296,11 +302,13 @@ main {
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 
   &__item {
     display: inline-flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: flex-end;
   }
 
   &__text {
@@ -337,6 +345,10 @@ main {
     padding: 12px 16px;
     border-radius: 8px;
     border: none;
+  }
+
+  &__textarea {
+    min-height: 128px;
   }
 
   &__button {
@@ -475,7 +487,7 @@ main {
 
   &__note {
     font-size: 14px;
-    margin-top: 24px;
+    margin-top: 6px;
     max-width: 655px;
   }
 }
@@ -517,7 +529,7 @@ main {
   &__image-container {
     border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 6px;
+    margin-bottom: 0;
 
     &--abs {
       position: absolute;
@@ -691,7 +703,7 @@ main {
   &__decor {
     position: absolute;
     bottom: -44px;
-    right: 0;
+    right: 4%;
     z-index: -1;
   }
 
