@@ -64,6 +64,30 @@ fieldset {
   padding: 0;
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #050d2a;
+  z-index: 30;
+
+  &__ring {
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    border: 10px solid #fa00ff;
+    filter: blur(3px);
+    border-radius: 50%;
+    border-top: 10px solid #050d2a;
+    border-bottom: 10px solid #050d2a;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+  }
+}
+
 .wrapper {
   overflow: hidden;
   position: relative;

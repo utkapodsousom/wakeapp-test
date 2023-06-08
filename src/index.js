@@ -25,6 +25,7 @@ modalBtnEls.on('click', (e) => {
 });
 
 $(window).on('load resize', () => {
+  preloader.fadeOut();
   if ($(window).width() <= 1100) {
     header.addClass('fixed');
     main.addClass('fixed');
@@ -72,10 +73,6 @@ const openNav = () => {
 const closeNav = () => {
   menuMobile.css({ width: '0', opacity: '0' });
 };
-
-$(window).on('load', () => {
-  preloader.fadeOut();
-});
 
 menuBtn.on('click', () => {
   openNav();
