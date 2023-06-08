@@ -2,12 +2,17 @@ import $ from 'jquery';
 
 import './styles/main.scss';
 
+const body = $('body');
 const modalEl = $('#modal');
 const preloader = $('.preloader');
 const menuBtn = $('#menuBtn');
 const tabBtn = $('.tabsBtn');
 const tabContentEls = $('.tabContent');
 const modalBtnEls = $('[data-modal]');
+const menuMobile = $('#menuMobile');
+const menuMobileClose = $('#menuMobile .close');
+const header = $('#header');
+const main = $('#main');
 
 modalBtnEls.on('click', (e) => {
   e.preventDefault();
@@ -15,6 +20,18 @@ modalBtnEls.on('click', (e) => {
   makeVisible(modalType);
   modalEl.css('display', 'block');
   $(`[data-tab=${modalType}]`).addClass('active');
+  body.css('overflow', 'hidden');
+  closeNav();
+});
+
+$(window).on('load resize', () => {
+  if ($(window).width() <= 1100) {
+    header.addClass('fixed');
+    main.addClass('fixed');
+  } else {
+    header.removeClass('fixed');
+    main.removeClass('fixed');
+  }
 });
 
 const makeVisible = (type) => {
@@ -30,18 +47,30 @@ tabBtn.on('click', (e) => {
   e.target.classList.add('active');
 });
 
+const closeModal = () => {
+  modalEl.css('display', 'none');
+  tabContentEls.css('display', 'none');
+  tabBtn.removeClass('active');
+  body.css('overflow', 'visible');
+}
+
 modalEl.on('click', (e) => {
   if (e.target == modalEl[0]) {
-    modalEl.css('display', 'none');
+    closeModal();
   }
-})
+});
+
+menuMobileClose.on('click', () => {
+  closeNav();
+  body.css('overflow', 'visible');
+});
 
 const openNav = () => {
-  menuMob.css({ width: '100%', opacity: '1' });
+  menuMobile.css({ width: '100%', opacity: '1' });
 };
 
 const closeNav = () => {
-  menuMob.css({ width: '0', opacity: '0' });
+  menuMobile.css({ width: '0', opacity: '0' });
 };
 
 $(window).on('load', () => {
@@ -50,5 +79,7 @@ $(window).on('load', () => {
 
 menuBtn.on('click', () => {
   openNav();
+  closeModal();
+  body.css('overflow', 'hidden');
 });
 

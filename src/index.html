@@ -12,14 +12,14 @@
     <div class="preloader__ring"></div>
   </div>
   <div class="wrapper">
-    <div class="menu-mobile">
+    <div class="menu-mobile" id="menuMobile">
       <span class="close">&times;</span>
       <nav class="nav-mobile">
-        <menu class="nav-mobie__list">
-          <li class="nav-mobie__item"><a href="#games" class="nav__link">Games</a></li>
-          <li class="nav-mobie__item"><a href="#games" class="nav__link">Contact Us</a></li>
-          <li class="nav-mobie__item"><a href="#games" class="nav__link">Terms of Use</a></li>
-          <li class="nav-mobie__item"><a href="#games" class="nav__link">About</a></li>
+        <menu class="nav-mobile__list">
+          <li class="nav-mobile__item"><a href="#games" class="nav__link">Games</a></li>
+          <li class="nav-mobile__item"><a href="#games" class="nav__link">Contact Us</a></li>
+          <li class="nav-mobile__item"><a href="#games" class="nav__link">Terms of Use</a></li>
+          <li class="nav-mobile__item"><a href="#games" class="nav__link">About</a></li>
         </menu>
       </nav>
       <div class="menu-mobile__actions">
@@ -27,7 +27,7 @@
         <a href="#" data-modal="login" class="button button--grad">Log in</a>
       </div>
     </div>
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__inner">
         <a href="/" class="header__logo"><img src="images/logo.svg" alt="logo" class="header__logo-image"></a>
         <div class="header__resp">
@@ -47,7 +47,7 @@
         <button type="button" class="header__mobile-btn" id="menuBtn"><span></span><span></span><span></span></button>
       </div>
     </header>
-    <main>
+    <main id="main">
       <section class="hero">
         <div class="hero__inner">
           <h1 class="hero__title">Awesome html5 games - no money!</h1>
@@ -279,9 +279,9 @@
             <input class="form__input" type="text" name="fname3" id="fname3" placeholder="Firstname" required>
             <input class="form__input" type="text" name="lname3" id="lname3" placeholder="Lastname" required>
             <input class="form__input" type="email" name="email3" id="email3" placeholder="Email Address" required>
-            <fieldset class="form__row">
-              <input class="form__input form__input--1-2" type="password" name="password" id="password" placeholder="Password" required>
-              <input class="form__input form__input--1-2" type="password" name="password-confirm" id="password-confirm" placeholder="Confirm Password" required>
+            <fieldset class="form__line">
+              <input class="form__input form__input--1-2 form__input-mob-fw" type="password" name="password" id="password" placeholder="Password" required>
+              <input class="form__input form__input--1-2 form__input-mob-fw" type="password" name="password-confirm" id="password-confirm" placeholder="Confirm Password" required>
             </fieldset>
             <fieldset class="form__terms form__terms--center">
               <label for="terms3" class="checkbox">
