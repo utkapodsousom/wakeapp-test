@@ -171,7 +171,7 @@ main {
   padding-bottom: 24px;
   background-image: url('../images/bg_hero.jpeg'), url('../images/bg_contact.jpeg');
   background-position: center -9%, 48% bottom;
-  background-size: auto, auto;
+  background-size: auto, 160%;
   background-repeat: no-repeat;
 
   &.fixed {
